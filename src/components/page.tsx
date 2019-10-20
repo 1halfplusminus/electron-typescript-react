@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import React from 'react';
-import { Box } from './core/box';
+import { Box, BoxProps } from './core/box';
 
-export const Page = (props: PropsWithChildren<{}>) => {
-  return <Box {...props} height="100vh" flexDirection="column" />;
+export const Page = ({ color, ...props }: PropsWithChildren<BoxProps>) => {
+  return <Box height="100vh" flexDirection="column" {...props} />;
 };

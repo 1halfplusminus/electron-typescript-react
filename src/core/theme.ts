@@ -2,8 +2,8 @@ import { Theme } from 'styled-system';
 
 const colors = {
   grey: '#E8EAF6',
-  indigo600: '#3949AB',
-  lightGreen600: '#7CB342',
+  indigo: '#3949AB',
+  lightGreen: '#7CB342',
   lightBlue: '#03A9F4',
   black: '#212121',
   primary: '#fbc02d',

@@ -1,10 +1,15 @@
 import { combineReducers } from 'redux';
-import { AppState } from './types';
-import { AppActions } from '../actions/types';
+import { mcqsReducer } from '../mcq/reducers';
+import { stepperReducer } from './stepper';
 
 export function createRootReducer() {
-  const reducer = combineReducers<AppState, AppActions>({});
+  const reducer = combineReducers({
+    mcqs: mcqsReducer,
+    step: stepperReducer,
+  });
   return reducer;
 }
 
 export default createRootReducer;
+
+export type AppState = ReturnType<ReturnType<typeof createRootReducer>>;

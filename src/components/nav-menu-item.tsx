@@ -1,8 +1,38 @@
 import React, { PropsWithChildren } from 'react';
 import { Text } from './core/text';
+import styled from 'styled-components';
+import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
 
-export interface NavMenuItemProps {}
+export interface NavMenuItemProps {
+  disabled?: boolean;
+}
 
-export const NavMenuItem = ({ children }: PropsWithChildren<{}>) => {
-  return <Text padding={2}>{children}</Text>;
+const NavText = styled(Text)<NavMenuItemProps>`
+  flex: 1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  background-color: ${({ theme }) => theme.colors.green};
+  color: ${({ disabled, theme }) =>
+    disabled ? theme.colors.grey : theme.colors.black};
+  a {
+    text-decoration: none;
+    display: flex;
+    color: ${({ disabled, theme }) =>
+      disabled ? theme.colors.grey : theme.colors.black};
+  }
+`;
+
+export const NavMenuItem = ({
+  children,
+  disabled,
+}: PropsWithChildren<NavMenuItemProps>) => {
+  return (
+    <NavText disabled={disabled} padding={2}>
+      {children}
+    </NavText>
+  );
 };
