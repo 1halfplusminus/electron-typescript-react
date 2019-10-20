@@ -46,4 +46,4 @@ const configureStore = (initialState?: AppState) => {
   return store;
 };
 
-export default { configureStore, history };
+export default { configureStore };

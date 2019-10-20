@@ -1,6 +1,5 @@
 import { RouteComponentProps } from '@reach/router';
 import React, { Dispatch, useMemo } from 'react';
-
 import { Page } from '../components/page';
 import { MCQ } from '../mcq/components/mcq';
 import { NavBar } from '../containers/nav-bar';
@@ -34,7 +33,7 @@ export const MCQPage = ({ navigate }: RouteComponentProps<MCQPageProps>) => {
     <Page flexDirection="row">
       <Grid>
         <Box flexBasis="30%">
-          <NavBar />
+          <NavBar navigate={navigate} />
         </Box>
         <Box flexDirection="column" flexBasis="70%" padding={3}>
           {Object.entries(mcqs).map(([key, { question, choises }], index) => (

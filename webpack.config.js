@@ -16,9 +16,7 @@ module.exports = merge.smart(baseConfig, {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          cacheDirectory: true,
-        },
+        options: {},
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/,
@@ -44,7 +42,6 @@ module.exports = merge.smart(baseConfig, {
     new ForkTsCheckerWebpackPlugin({
       reportFiles: ['src/**/*'],
     }),
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(

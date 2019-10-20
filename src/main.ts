@@ -22,14 +22,13 @@ let win: BrowserWindow | null = null;
 async function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 960,
     webPreferences: {
       nodeIntegration: true,
     },
     darkTheme: true,
   });
-  win.webContents.devToolsWebContents;
   if (process.env.NODE_ENV !== 'production') {
     installExtension(REACT_DEVELOPER_TOOLS)
       .then(name => console.log(`Added Extension:  ${name}`))
@@ -41,7 +40,7 @@ async function createWindow() {
   } else {
     win.loadURL(
       url.format({
-        pathname: path.join(__dirname, '../dist/index.html'),
+        pathname: path.join(__dirname, '/../dist/index.html'),
         protocol: 'file:',
         slashes: true,
       }),

@@ -21,7 +21,7 @@ export const PersonalInfoPage = ({
     <Page flexDirection="row">
       <Grid>
         <Box flexBasis="30%">
-          <NavBar />
+          <NavBar navigate={navigate} />
         </Box>
         <Box flexDirection="row" flexBasis="70%"></Box>
       </Grid>

@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import { AppState } from '../reducers';
 import { useSelector, useDispatch } from 'react-redux';
 import { StepperActions } from '../actions/types';
-import { navigate } from '@reach/router';
 import { activeStep } from '../actions';
+import { RouteComponentProps } from '@reach/router';
 
 const StyledStepper = styled(Stepper)`
   flex: 1;
@@ -16,7 +16,7 @@ const StyledStepper = styled(Stepper)`
   }
 `;
 
-export const NavBar = () => {
+export const NavBar = ({ navigate }: Pick<RouteComponentProps, 'navigate'>) => {
   const { steps, activeStep: activedStep } = useSelector((state: AppState) => ({
     steps: state.step.steps,
     activeStep: state.step.activeStep,
@@ -32,8 +32,10 @@ export const NavBar = () => {
             disabled={!enabled}
             key={new Number(key).valueOf()}
             onClick={() => {
-              navigate(path);
-              dispatch(activeStep(index));
+              if (navigate) {
+                navigate(path);
+                dispatch(activeStep(index));
+              }
             }}
           >
             <StepLabel> {title}</StepLabel>
