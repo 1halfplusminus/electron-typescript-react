@@ -1,8 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { Text } from './core/text';
 import styled from 'styled-components';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
 
 export interface NavMenuItemProps {
   disabled?: boolean;

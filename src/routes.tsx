@@ -5,8 +5,8 @@ import {
   createHistory,
 } from '@reach/router';
 import React from 'react';
-import { MCQPage } from './pages/mcq';
-import { PersonalInfoPage } from './pages/personal-info';
+import { HomePage } from './pages/home';
+import { SecondPage } from './pages/second';
 
 let source = createMemorySource('');
 let history = createHistory(source);
@@ -14,8 +14,8 @@ let history = createHistory(source);
 export const Routes = () => (
   <LocationProvider history={history}>
     <Router>
-      <MCQPage path="/" />
-      <PersonalInfoPage path="/info" />
+      <HomePage path="/" />
+      <SecondPage path="/second" />
     </Router>
   </LocationProvider>
 );

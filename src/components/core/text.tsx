@@ -17,7 +17,7 @@ import {
   TextAlignProps,
   TextStyleProps,
 } from 'styled-system';
-import React, { CSSProperties, PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
 export type TextProps = FontSizeProps &
   SpaceProps &

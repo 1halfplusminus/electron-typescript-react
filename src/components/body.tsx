@@ -1,14 +1,9 @@
-import React, { PropsWithChildren } from 'react';
-import { Box, BoxProps } from './core/box';
+import styled from 'styled-components';
 
-export const Body = ({
-  children,
-  color,
-  ...props
-}: PropsWithChildren<BoxProps>) => {
-  return (
-    <Box {...props} flex={1} alignItems="center" justifyContent="center">
-      {children}
-    </Box>
-  );
-};
+export const Body = styled.div`
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-auto-flow: row;
+  grid-template-rows: 50% auto;
+  width: 100%;
+`;

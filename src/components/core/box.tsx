@@ -1,5 +1,3 @@
-import React, { PropsWithChildren } from 'react';
-
 import styled from 'styled-components';
 import {
   color,
