@@ -4,6 +4,7 @@ import { Page } from '../components/page';
 import { NavBar } from '../containers/nav-bar';
 import { Box } from '../components/core/box';
 import styled from 'styled-components';
+import PersoInfoForm from '../components/form/personal-info';
 
 export interface PersonalInfoPageProps {}
 
@@ -23,7 +24,9 @@ export const PersonalInfoPage = ({
         <Box flexBasis="30%">
           <NavBar navigate={navigate} />
         </Box>
-        <Box flexDirection="row" flexBasis="70%"></Box>
+        <Box flexDirection="row" padding={2}>
+          <PersoInfoForm />
+        </Box>
       </Grid>
     </Page>
   );
