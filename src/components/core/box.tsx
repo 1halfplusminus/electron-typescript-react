@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-
 import styled from 'styled-components';
 import {
   color,
@@ -20,6 +19,8 @@ import {
   ZIndexProps,
   display,
   DisplayProps,
+  grid,
+  GridProps,
 } from 'styled-system';
 
 export type BoxProps = SpaceProps &
@@ -30,7 +31,8 @@ export type BoxProps = SpaceProps &
   FlexboxProps &
   HeightProps &
   DisplayProps &
-  ZIndexProps;
+  ZIndexProps &
+  GridProps;
 
 export const Box = styled.div<BoxProps>`
   ${space}
@@ -42,6 +44,7 @@ export const Box = styled.div<BoxProps>`
   ${zIndex}
   ${height}
   ${display}
+  ${grid}
   flex-shrink: 1;
 `;
 

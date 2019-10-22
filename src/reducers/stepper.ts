@@ -3,6 +3,7 @@ import {
   ACTIVE_STEP,
   ENABLE_STEP,
   DISABLE_STEP,
+  PERSIST_FORM,
 } from '../actions/types';
 import produce from 'immer';
 
@@ -13,9 +14,17 @@ export interface Step {
   completed: boolean;
   path: string;
 }
+
+export interface ContactInformation {
+  email: string;
+  nom: string;
+  prenom: string;
+}
+
 export interface StepperState {
   steps: { [key: string]: Step };
   activeStep: number;
+  contactInformation: ContactInformation;
 }
 
 const initialState: StepperState = {
@@ -30,12 +39,24 @@ const initialState: StepperState = {
     '2': {
       id: '2',
       title: 'Entrez vos informations personelles',
-      enabled: true,
+      enabled: false,
       completed: false,
       path: '/info',
     },
+    '3': {
+      id: '3',
+      title: 'Félicitations',
+      enabled: false,
+      completed: false,
+      path: '/end',
+    },
   },
   activeStep: 0,
+  contactInformation: {
+    email: '',
+    nom: '',
+    prenom: '',
+  },
 };
 
 export function stepperReducer(
@@ -43,6 +64,10 @@ export function stepperReducer(
   action: StepperActions,
 ): StepperState {
   switch (action.type) {
+    case PERSIST_FORM:
+      return produce(state, draft => {
+        draft.contactInformation = action.payload;
+      });
     case ACTIVE_STEP:
       return produce(state, draft => {
         draft.activeStep = action.payload.stepIndex;

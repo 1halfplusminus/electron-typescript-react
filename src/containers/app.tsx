@@ -17,6 +17,7 @@ export const App = ({ children }: PropsWithChildren<{}>) => {
           html, body {
             margin: 0;
             font-family: 'Open Sans', "Roboto", "Helvetica", "Arial", sans-serif;
+            background-color: white;
           }
         `}</style>
       </Helmet>

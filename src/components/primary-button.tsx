@@ -9,15 +9,18 @@ import {
   color,
   FlexboxProps,
   flexbox,
+  grid,
+  GridProps,
 } from 'styled-system';
 
 export const PrimaryButton = styled(Button)<
-  SpaceProps & FontSizeProps & ColorProps & FlexboxProps
+  SpaceProps & FontSizeProps & ColorProps & FlexboxProps & GridProps
 >`
   ${space}
   ${fontSize}
   ${color}
   ${flexbox}
+  ${grid}
 `;
 
 PrimaryButton.defaultProps = {
