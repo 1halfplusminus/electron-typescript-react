@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import React from 'react';
-import Helmet from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 export const App = ({ children }: PropsWithChildren<{}>) => {
   return (

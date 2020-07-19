@@ -1,9 +1,9 @@
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const spawn = require('child_process').spawn;
 
 const baseConfig = require('./webpack.config');
 
-module.exports = merge.smart(baseConfig, {
+module.exports = merge(baseConfig, {
   entry: {
     app: ['react-hot-loader/patch'],
   },
